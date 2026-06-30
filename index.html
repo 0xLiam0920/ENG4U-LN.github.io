@@ -86,7 +86,16 @@
   .devices{max-width:var(--maxw);margin-top:54px;padding-top:26px;border-top:1px solid var(--rule2);}
   .devices .lbl{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.22em;
     text-transform:uppercase;color:var(--french);margin-bottom:14px;}
+  .devices .list{margin:0 0 14px 1.2rem;color:var(--ink);line-height:1.7;}
+  .devices .list li{margin:2px 0;}
   .devices .body{font-size:1rem;line-height:1.72;color:var(--ink-soft);white-space:pre-wrap;}
+
+  .works-cited-wrap{position:fixed;left:0;right:0;bottom:14px;z-index:2;display:flex;justify-content:center;pointer-events:none;}
+  .works-cited-btn{pointer-events:auto;font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.1em;
+    text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
+    padding:10px 16px;border-radius:999px;transition:background .2s,border-color .2s;}
+  .works-cited-btn:hover{background:var(--french);border-color:var(--french);}
+  .works-cited-btn:focus-visible{outline:2px solid var(--english);outline-offset:3px;}
 
   /* ---- the lock ---- */
   .gate{max-width:var(--maxw);margin-top:48px;padding:24px 26px;border:1px solid var(--rule);
@@ -200,6 +209,16 @@ the thaw: and what he buried learned to grow.`,
 At line 9 the volta turns — "But banished is not buried" — and the sestet becomes la survivance: an extended metaphor of the language as a seed "wintering" under snow, kept alive in secret by the "attic Mass" and "cradle" song until "the thaw."
 
 The choice of a sonnet is the point. The form is a small, sealed, fourteen-line container that holds its shape under pressure — exactly as the culture held itself intact under assimilation. The octave-to-sestet hinge enacts Continuity and Change (suppression, then survival), while the legal diction makes the Cause and Consequence of colonial policy concrete.`
+      ,
+      deviceList: [
+        "Volta (octave to sestet turn)",
+        "Extended metaphor (seed and thaw)",
+        "Allusion (Durham Report, Act of Union)",
+        "Imagery (winter, attic, cradle)",
+        "Symbolism (language as seed)",
+        "Contrast (erasure vs survivance)",
+        "Formal structure (Petrarchan sonnet)"
+      ]
     },
     {
       seq: 2,
@@ -235,6 +254,16 @@ we will not break. we will not kneel.`,
 The historical grounding is the Conscription Crisis of 1917. "we volunteer" set against "we are conscripted" stages the rupture over Robert Borden's Military Service Act, while "one law denied" and "that bars our tongue" point to Ontario's Regulation 17 (1912), the banning of French-language schooling that fuelled Henri Bourassa's argument in Le Devoir: that French Canadians were asked to die in "Flanders' mud" for a Crown that denied them rights at home.
 
 Read across, the columns share one wound ("to Flanders' mud, to graves abroad"), and that is the nuance — the two solitudes were buried in the same war. The structure delivers Historical Perspective literally, two viewpoints side by side, and the contradiction is the Cause and Consequence of a country conscripting a people it would not let speak.`
+      ,
+      deviceList: [
+        "Contrapuntal structure (dual voices)",
+        "Juxtaposition (duty vs resistance)",
+        "Parallelism and repetition",
+        "Rhetorical question",
+        "Allusion (Regulation 17, Conscription Crisis)",
+        "Tone shift across columns",
+        "Symbolism (mud, throne, flag)"
+      ]
     },
     {
       seq: 3,
@@ -283,6 +312,16 @@ still arguing, come spring, whose spring it is.`,
 Diction is documentary and exact — "five hundred doors / kicked in at dawn, five hundred held uncharged" — to register the roughly 500 arrests without charge, and the paradox "a liberty suspended to save the liberty" compresses the central ethical debate over Pierre Trudeau's invocation of the War Measures Act.
 
 The line "the cause that killed him / died a little too" makes its argument with nuance, separating Quebec's legitimate aspirations from the FLQ's violence — conceding the grievance while condemning the method. Allusion frames the era ("Maîtres chez nous" for the Quiet Revolution; "Just watch me" for Trudeau), and the closing river and "seed beneath the snow" deliberately echo the first two poems, so the collection's recurring symbols argue the Franco-English question was not resolved but transformed: still two tongues, one house, still arguing whose spring it is.`
+      ,
+      deviceList: [
+        "Free verse",
+        "Anaphora (repeated 'Then')",
+        "Fragmentation / clipped syntax",
+        "Allusion (Quiet Revolution, October Crisis)",
+        "Paradox (liberty suspended to save liberty)",
+        "Imagery (river, trunk, dawn raids)",
+        "Motif recurrence (seed beneath snow)"
+      ]
     }
   ];
 
@@ -384,6 +423,12 @@ The line "the cause that killed him / died a little too" makes its argument with
   }
 
   function render(){
+
+        <div class="works-cited-wrap">
+          <a class="works-cited-btn" href="Liam_Nayyar_-_Works_Cited_(Chicago).docx" target="_blank" rel="noopener noreferrer">
+            Works Cited (DOCX)
+          </a>
+        </div>
     const p    = ordered[idx];
     const last = idx === ordered.length-1;
     const nextLocked = !last && !unlocked[idx+1];
@@ -394,6 +439,7 @@ The line "the cause that killed him / died a little too" makes its argument with
     else                nextBtn = `<button class="nav" id="next">Continue ↓</button>`;
 
     const gateHTML = (gateOpen && nextLocked) ? buildGate(idx+1) : "";
+    const deviceListHTML = (p.deviceList || []).map((item)=>`<li>${item}</li>`).join("");
 
     stage.innerHTML = `
       <div class="fade">
@@ -403,6 +449,7 @@ The line "the cause that killed him / died a little too" makes its argument with
         ${buildBody(p)}
         <div class="devices">
           <div class="lbl">Poetic devices</div>
+          <ul class="list">${deviceListHTML}</ul>
           <div class="body">${p.devices}</div>
         </div>
         ${gateHTML}
