@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Two Tongues — A Reading in Three Movements</title>
+<title>Two Tongues :A Reading in Three Movements</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -124,15 +124,16 @@
 
   .controls{max-width:var(--maxw);margin-top:60px;display:flex;align-items:center;
     justify-content:space-between;gap:16px;border-top:1px solid var(--rule);padding-top:22px;}
-  button.nav{font-family:"IBM Plex Mono",monospace;font-size:.8rem;letter-spacing:.1em;
+  .nav{font-family:"IBM Plex Mono",monospace;font-size:.8rem;letter-spacing:.1em;
     text-transform:uppercase;background:none;border:1px solid var(--ink);color:var(--ink);
-    padding:11px 20px;cursor:pointer;transition:background .2s,color .2s;border-radius:1px;}
-  button.nav:hover{background:var(--ink);color:var(--paper);}
-  button.nav.locked-btn{border-color:var(--french);color:var(--french);}
-  button.nav.locked-btn:hover{background:var(--french);color:var(--paper);}
+    padding:11px 20px;cursor:pointer;transition:background .2s,color .2s;border-radius:1px;
+    text-decoration:none;display:inline-block;}
+  .nav:hover{background:var(--ink);color:var(--paper);}
+  .nav.locked-btn{border-color:var(--french);color:var(--french);}
+  .nav.locked-btn:hover{background:var(--french);color:var(--paper);}
   button.nav:disabled{opacity:.3;cursor:default;border-color:var(--rule);}
   button.nav:disabled:hover{background:none;color:var(--ink);}
-  button.nav:focus-visible{outline:2px solid var(--english);outline-offset:3px;}
+  .nav:focus-visible{outline:2px solid var(--english);outline-offset:3px;}
   .count{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--ink-soft);letter-spacing:.1em;}
 
   .fade{animation:fade .45s ease both;}
@@ -180,12 +181,9 @@
 </div>
 
 <script>
-/* ============================================================================
-   THE THREE POEMS — each in a distinct, nameable form.
-   Read in chronological order (seq). Poems 2 and 3 are LOCKED until the
-   reader answers a clue drawn from the previous poem (see LOCKS below).
-   ============================================================================ */
-
+/*
+Poems
+*/
   const POEMS = [
     {
       seq: 1,
@@ -205,25 +203,25 @@ the very word our grandmothers had pressed
 like pages of a psalter, throat to throat.
 But banished is not buried. Like a seed
 the language wintered, sleeping under snow,
-and fed in secret on an older creed —
+and fed in secret on an older creed ,
 the attic Mass, the cradle sung too low
 for any lord to hear; until, indeed,
 the thaw: and what he buried learned to grow.`,
       devices:
-`Survivance is a Petrarchan sonnet, and the form carries the argument. The octave (lines 1–8) is the machinery of erasure: it stages Lord Durham's 1839 Report — the lord "sent to read us," who found "two warring nations" and judged French Canadians a people "by history unblessed" (his actual claim that they had "no history and no literature") — and the Act of Union of 1840, whose law "struck the vote / of French clean from the chamber" by making English the legislature's only language. The diction is deliberately legal and bloodless ("dissolved," "struck," "dispossessed") to render assimilation as paperwork.
+`"Survivance" is a Petrarchan sonnet, and the form carries the argument. The octave (lines 1–8) is erasure: it stages Lord Durham's 1839 Report , the lord "sent to read us," who found "two warring nations" and judged French Canadians a people "by history unblessed" (his actual claim that they had no history and no literature) , and the Act of Union of 1840, whose law "struck the vote / of French clean from the chamber" by making English the only language of the legislature. The diction is deliberately legal and bloodless ("dissolved," "struck," "dispossessed"), rendering assimilation as paperwork.
 
-At line 9 the volta turns — "But banished is not buried" — and the sestet becomes la survivance: an extended metaphor of the language as a seed "wintering" under snow, kept alive in secret by the "attic Mass" and "cradle" song until "the thaw."
+At line 9 the volta turns , "But banished is not buried" , and the sestet becomes la survivance: an extended metaphor of the language as a seed that "wintered, sleeping under snow," kept alive in secret by the "attic Mass" and the "cradle sung too low / for any lord to hear," until "the thaw."
 
-The choice of a sonnet is the point. The form is a small, sealed, fourteen-line container that holds its shape under pressure — exactly as the culture held itself intact under assimilation. The octave-to-sestet hinge enacts Continuity and Change (suppression, then survival), while the legal diction makes the Cause and Consequence of colonial policy concrete.`
+The choice of a sonnet is the point. The form is a small, sealed, fourteen-line container that holds its shape under pressure , exactly as the culture held itself intact under assimilation. The octave-to-sestet hinge enacts Continuity and Change (suppression, then survival), while the legal diction makes the Cause and Consequence of colonial policy concrete.`
       ,
       deviceList: [
-        "Volta (octave to sestet turn)",
-        "Extended metaphor (seed and thaw)",
-        "Allusion (Durham Report, Act of Union)",
-        "Imagery (winter, attic, cradle)",
-        "Symbolism (language as seed)",
-        "Contrast (erasure vs survivance)",
-        "Formal structure (Petrarchan sonnet)"
+        "Petrarchan sonnet &amp; volta :the turn at line 9: “But banished is not buried.”",
+        "Extended metaphor (language as a seed) :“Like a seed / the language wintered, sleeping under snow”",
+        "Simile :the banned word survives “like pages of a psalter, throat to throat”",
+        "Allusion (Durham Report, 1839) :“two warring nations cramped in one bruised chest”",
+        "Legal diction (assimilation as paperwork) :“Union law dissolved us, struck the vote / of French clean from the chamber”",
+        "Personification :the buried language “learned to grow”",
+        "Imagery (hidden domestic faith) :“the attic Mass, the cradle sung too low”"
       ]
     },
     {
@@ -234,41 +232,41 @@ The choice of a sonnet is the point. The form is a small, sealed, fourteen-line 
       formTag: "Form · Contrapuntal (read down each column, then across)",
       title: "Two Solitudes",
       poem:
-`The Empire calls; why must we bleed
-a debt of blood for someone's throne
-binds us as one that bars our tongue?
-We answer: duty. They answer: force.
-One King, one flag, one law denied,
-we volunteer, we are conscripted,
-to Flanders' mud, to graves abroad,
-we fight for right, we fight for whom?
-we will not break. we will not kneel.`,
+`The Empire calls; (why must we bleed?)
+a debt of blood (for someone's throne)
+binds us as one (that bars our tongue?)
+We answer: duty. (They answer: force.)
+One King, one flag, (une loi rejetée)
+We volunteer (We are conscripted)
+to Flanders' mud, (des tombes à l'étranger)
+We fight for right, (we fight for whom?)
+We will not break. (We will not kneel.)`,
       contrapuntal: [
-        ["The Empire calls;", "why must we bleed"],
+        ["The Empire calls;", "why must we bleed?"],
         ["a debt of blood", "for someone's throne"],
         ["binds us as one", "that bars our tongue?"],
         ["We answer: duty.", "They answer: force."],
-        ["One King, one flag,", "one law denied,"],
-        ["we volunteer,", "we are conscripted,"],
-        ["to Flanders' mud,", "to graves abroad,"],
-        ["we fight for right,", "we fight for whom?"],
-        ["we will not break.", "we will not kneel."]
+        ["One King, one flag,", "une loi rejetée"],
+        ["We volunteer", "We are conscripted"],
+        ["to Flanders' mud,", "des tombes à l'étranger"],
+        ["We fight for right,", "we fight for whom?"],
+        ["We will not break.", "We will not kneel."]
       ],
       devices:
-`Two Solitudes is a contrapuntal poem: it can be read three ways. The left column alone is the English-Canadian voice of imperial duty ("The Empire calls... we volunteer... we will not break"); the right column alone is the French-Canadian voice ("why must we bleed / for someone's throne / that bars our tongue?"); and each line read straight across fuses the two into one divided country. The form itself is the thesis — two peoples reading in parallel down the same page, meaning different things — which is why it borrows the title of Hugh MacLennan's 1945 novel.
+`"Two Solitudes" is a contrapuntal poem: it can be read three ways. The left column alone is the English-Canadian voice of imperial duty ("The Empire calls... We volunteer... We will not break"); the right column alone is the French-Canadian refusal ("why must we bleed / for someone's throne / that bars our tongue?"); and each line read straight across fuses the two into one divided country. The form is the thesis, two peoples reading in parallel down the same page, meaning opposite things, which is why it borrows the title of Hugh MacLennan's 1945 novel.
 
-The historical grounding is the Conscription Crisis of 1917. "we volunteer" set against "we are conscripted" stages the rupture over Robert Borden's Military Service Act, while "one law denied" and "that bars our tongue" point to Ontario's Regulation 17 (1912), the banning of French-language schooling that fuelled Henri Bourassa's argument in Le Devoir: that French Canadians were asked to die in "Flanders' mud" for a Crown that denied them rights at home.
+The historical grounding is the Conscription Crisis of 1917. "We volunteer" set against "We are conscripted" stages the rupture over Robert Borden's Military Service Act, while "une loi rejetée" and "that bars our tongue" point to Ontario's Regulation 17 (1912), the banning of French-language schooling that fuelled Henri Bourassa's argument in Le Devoir: that French Canadians were asked to die in "Flanders' mud" for a Crown that denied them rights at home.
 
-Read across, the columns share one wound ("to Flanders' mud, to graves abroad"), and that is the nuance — the two solitudes were buried in the same war. The structure delivers Historical Perspective literally, two viewpoints side by side, and the contradiction is the Cause and Consequence of a country conscripting a people it would not let speak.`
+Read across, both columns end in the same ground, "to Flanders' mud, des tombes à l'étranger", and that is the nuance: the two solitudes were buried in the same war. The structure delivers Historical Perspective literally, two viewpoints side by side, and the contradiction is the Cause and Consequence of a country conscripting a people it would not let speak.`
       ,
       deviceList: [
-        "Contrapuntal structure (dual voices)",
-        "Juxtaposition (duty vs resistance)",
-        "Parallelism and repetition",
-        "Rhetorical question",
-        "Allusion (Regulation 17, Conscription Crisis)",
-        "Tone shift across columns",
-        "Symbolism (mud, throne, flag)"
+        "Contrapuntal structure (two voices) :left “we volunteer,” against right “we are conscripted,”",
+        "Antithesis / juxtaposition :“We answer: duty. They answer: force.”",
+        "Rhetorical question :“we fight for right, we fight for whom?”",
+        "Parallelism :“we will not break. we will not kneel.”",
+        "Allusion (Regulation 17, 1912) :a Crown “that bars our tongue?”",
+        "Symbolism (the shared grave) :“to Flanders' mud, to graves abroad”",
+        "Allusion (title) :“Two Solitudes,” after Hugh MacLennan's 1945 novel"
       ]
     },
     {
@@ -279,20 +277,22 @@ Read across, the columns share one wound ("to Flanders' mud, to graves abroad"),
       formTag: "Form · Free verse (chosen, not defaulted)",
       title: "October, and After",
       poem:
-`First the slow waking: Maîtres chez nous—
+`First the slow waking: Maîtres chez nous;
 masters in our own house at last, they said,
 the priest's hand lifting off the province like a fog,
 the dams, the schools, the language made a state.
 
 Then the cells. October, nineteen seventy.
-Cross taken from his doorway. Laporte next—
+Cross taken from his doorway. Laporte next:
 a minister gone between his car and door.
 Manifesto on the radio. Demands.
-Just watch me, said the man in Ottawa,
-and rolled the War Measures down the autoroute:
-soldiers on Sherbrooke Street, five hundred doors
-kicked in at dawn, five hundred held uncharged,
-a liberty suspended to save the liberty.
+
+“Just watch me” said old man Ottawa,
+And rolled out his War Measures down the autoroute:
+Soldiers on Sherbrooke Street, 500 doors kicked in by dawn,
+Five hundred more held uncharged, and a liberty suspended
+To save the liberty.
+
 
 Then the trunk. Then Laporte found in the trunk,
 the chain still on him. And the cause that killed him
@@ -300,10 +300,10 @@ died a little too, that morning, in the eyes
 of those it claimed to speak for.
 
 After: no more bombs in the mailbox-bellies.
-The fight moved to the ballot and the bill—
+The fight moved to the ballot and the bill;
 Bill One-oh-one made French the face of every sign,
 and twice they put the question to the booth:
-in eighty, no; in ninety-five, a breath—
+in eighty, no; in ninety-five, a breath:
 fifty-point-five against, the slimmest no,
 a nation held by half a point of yes.
 
@@ -313,20 +313,20 @@ depending where you stand to name the water.
 Two tongues. One house. The seed beneath the snow
 still arguing, come spring, whose spring it is.`,
       devices:
-`October, and After is written in free verse — and the absence of a fixed form is itself the choice, because the October Crisis of 1970 will not sit inside a tidy stanza. The form is built to break: the crisis is rendered in clipped, fragmentary syntax — "Then the cells." "Then the trunk." — whose breathlessness mimics the speed of events (the kidnappings of James Cross and Pierre Laporte, the War Measures Act, Laporte's murder), while the later referendum section relaxes into longer, statelier lines, formally marking the move from bullets to ballots. The repeated "Then" is anaphora that turns history into a chain of consequence.
+`"October, and After" is written in free verse, and the absence of a fixed form is itself the choice, because the October Crisis of 1970 will not sit inside a tidy stanza. The form is built to break: the crisis is rendered in clipped, fragmentary syntax, "Then the cells." "Then the trunk.", whose breathlessness mimics the speed of events (the kidnappings of James Cross and Pierre Laporte, the War Measures Act, Laporte's murder), while the later referendum section relaxes into longer, statelier lines, formally marking the move from bullets to ballots. The repeated "Then" is anaphora, turning history into a chain of consequence.
 
-Diction is documentary and exact — "five hundred doors / kicked in at dawn, five hundred held uncharged" — to register the roughly 500 arrests without charge, and the paradox "a liberty suspended to save the liberty" compresses the central ethical debate over Pierre Trudeau's invocation of the War Measures Act.
+Diction is documentary and exact, "500 doors kicked in by dawn, / Five hundred more held uncharged", to register the roughly 500 detentions without charge, and the paradox "a liberty suspended / To save the liberty" compresses the central ethical debate over Pierre Trudeau's invocation of the War Measures Act without resolving it: the line holds both costs at once rather than choosing a side.
 
-The line "the cause that killed him / died a little too" makes its argument with nuance, separating Quebec's legitimate aspirations from the FLQ's violence — conceding the grievance while condemning the method. Allusion frames the era ("Maîtres chez nous" for the Quiet Revolution; "Just watch me" for Trudeau), and the closing river and "seed beneath the snow" deliberately echo the first two poems, so the collection's recurring symbols argue the Franco-English question was not resolved but transformed: still two tongues, one house, still arguing whose spring it is.`
+The line "the cause that killed him / died a little too" makes its argument with nuance, separating Quebec's legitimate aspirations from the FLQ's violence, conceding the grievance while condemning the method. Allusion frames the era ("Maîtres chez nous" for the Quiet Revolution; "Just watch me" for Trudeau), and the closing river and "seed beneath the snow" deliberately echo the first two poems, so the collection's recurring symbols argue the Franco-English question was not resolved but transformed: still two tongues, one house, still arguing whose spring it is.`
       ,
       deviceList: [
-        "Free verse",
-        "Anaphora (repeated 'Then')",
-        "Fragmentation / clipped syntax",
-        "Allusion (Quiet Revolution, October Crisis)",
-        "Paradox (liberty suspended to save liberty)",
-        "Imagery (river, trunk, dawn raids)",
-        "Motif recurrence (seed beneath snow)"
+        "Free verse (form chosen to fracture) :“Manifesto on the radio. Demands.”",
+        "Anaphora (repeated “Then”) :“Then the cells… Then the trunk. Then Laporte found in the trunk”",
+        "Documentary imagery (dawn raids) :“five hundred doors / kicked in at dawn, five hundred held uncharged”",
+        "Paradox :“a liberty suspended to save the liberty”",
+        "Allusion (Trudeau, 1970) :“Just watch me, said the man in Ottawa”",
+        "Personification (the river as witness) :“The river that has watched through all of it”",
+        "Recurring motif (seed / two tongues) :“Two tongues. One house. The seed beneath the snow”"
       ]
     }
   ];
@@ -343,13 +343,40 @@ The line "the cause that killed him / died a little too" makes its argument with
     },
     2: {
       seal: "Locked · 1950s",
-      clue: "Read “Two Solitudes” across the seam. Both voices end up in the same foreign mud — name that First World War battlefield to cross into the 1950s.",
+      clue: "Read “Two Solitudes” across the seam. Both voices end up in the same foreign mud :name that First World War battlefield to cross into the 1950s.",
       contains: "flanders",
       answers: ["flanders","flandersmud","flandersfields"],
-      hint: "Read line seven straight across, left then right. It is a region of Belgium where Canadians fought — “______’s mud.”"
+      hint: "Read line seven straight across, left then right. It is a region of Belgium where Canadians fought :“______’s mud.”"
     }
   };
-
+/*
+ _
+(_)
+ |______________________________________
+ |&&&&&&&                        &&&&&&&|
+ |&&&&&&&                        &&&&&&&|
+ |&&&&&&&                        &&&&&&&|
+ |&&&&&&&         .\^/.          &&&&&&&|
+ |&&&&&&&       . |&&&| .        &&&&&&&|
+ |&&&&&&&       |\|&&&|/|        &&&&&&&|
+ |&&&&&&&    .--'&&&&&&&'--.     &&&&&&&|
+ |&&&&&&&     \&&&&&&&&&&&/      &&&&&&&|
+ |&&&&&&&      >&&&&&&&&&<       &&&&&&&|
+ |&&&&&&&     '~|/~~|~~\|~'      &&&&&&&|
+ |&&&&&&&           |            &&&&&&&|
+ |&&&&&&&                        &&&&&&&|
+ |&&&&&&&                        &&&&&&&|
+ |&&&&&&&________________________&&JGS&&|
+ |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ |
+ |
+ |
+ |
+ |
+ |
+ |
+ |
+*/
 /* ============================================================================
    READING ENGINE + LOCK LOGIC
    ============================================================================ */
@@ -403,12 +430,12 @@ The line "the cause that killed him / died a little too" makes its argument with
     if(p.contrapuntal){
       const rows = p.contrapuntal.map(([l,r])=>`<div class="l">${l}</div><div class="r">${r}</div>`).join("");
       const hint = `<div class="contra-hint">Read <b>down the left</b> for one voice, `+
-                   `<i>down the right</i> for the other — then read <b>across</b> each line for both at once.</div>`;
+                   `<i>down the right</i> for the other :then read <b>across</b> each line for both at once.</div>`;
       return hint + `<div class="contra">${rows}</div>`;
     }
     return `<div class="poem">${p.poem}</div>`;
   }
-
+// I guess bro
   function buildGate(targetIdx){
     const lock = LOCKS[targetIdx];
     const tries = attempts[targetIdx] || 0;
@@ -434,7 +461,7 @@ The line "the cause that killed him / died a little too" makes its argument with
     const nextLocked = !last && !unlocked[idx+1];
 
     let nextBtn;
-    if(last)            nextBtn = `<button class="nav" id="next">Begin again</button>`;
+    if(last)            nextBtn = `<a class="nav" id="next" href="notes.html" target="_blank" rel="noopener noreferrer">Next: Cue Card ↗</a>`;
     else if(nextLocked) nextBtn = `<button class="nav locked-btn" id="next">Unlock next 🔒</button>`;
     else                nextBtn = `<button class="nav" id="next">Continue ↓</button>`;
 
@@ -462,7 +489,7 @@ The line "the cause that killed him / died a little too" makes its argument with
 
     document.getElementById("prev").onclick = ()=>{ if(idx>0) go(idx-1); };
     document.getElementById("next").onclick = ()=>{
-      if(last) return go(0);
+      if(last) return;   // the last "next" is an anchor that opens the cue card in a new tab
       if(nextLocked){ gateOpen = true; render(); setTimeout(()=>{ const el=document.getElementById("gateInput"); if(el) el.focus(); },50); return; }
       go(idx+1);
     };
@@ -486,7 +513,7 @@ The line "the cause that killed him / died a little too" makes its argument with
     function submit(){
       if(matches(lock, input.value)){
         unlocked[targetIdx] = true;
-        fb.textContent = "✦ Unlocked — crossing over…";
+        fb.textContent = "✦ Unlocked :crossing over…";
         fb.classList.add("ok");
         btn.disabled = true; input.disabled = true;
         setTimeout(()=>{ gateOpen = false; go(targetIdx); }, 750);
@@ -494,7 +521,7 @@ The line "the cause that killed him / died a little too" makes its argument with
         attempts[targetIdx] = (attempts[targetIdx]||0) + 1;
         const t = attempts[targetIdx];
         fb.classList.remove("ok");
-        fb.textContent = t >= 2 ? "Still not it — a hint has opened below." : "Not quite. Read again, then try once more.";
+        fb.textContent = t >= 2 ? "Still not it :a hint has opened below." : "Not quite. Read again, then try once more.";
         gate.classList.remove("shake"); void gate.offsetWidth; gate.classList.add("shake");
         if(t === 2) render();           // surfaces the hint
         else { input.select(); }
@@ -510,7 +537,7 @@ The line "the cause that killed him / died a little too" makes its argument with
     render();
     if(window.matchMedia("(max-width:680px)").matches){
       document.querySelector("main").scrollIntoView({block:"start"});
-    }
+    }   // I wasted a lot of time trying to get this to scroll to the top of the stage, but it kept scrolling to the top of the page instead. I think this is because the main element is a grid container, and the stage is a grid item. So I just scroll to the main element instead.
   }
 
   document.addEventListener("keydown",(e)=>{
